@@ -1,2 +1,34 @@
 
-fetch('https://zenquotes.io/api/random').then(response => { console.log(response); }).then(data => { console.log(data); }).catch(error => { console.log(error) })
+async function fetchQuotes() {
+    const response = await fetch('https://zenquotes.io/api/random');
+    const quotes = await response.json();
+    return quotes;
+}
+
+function populateQuotes() {
+    fetchQuotes().then(quotes => {
+    
+    var quote = document.createElement('p');
+    quote.classList.add('container__quote-quote')
+    var newQuote = document.createTextNode(quotes[0].q)
+    
+    quote.appendChild(newQuote);
+    
+    const currentQuoteDiv = document.getElementById('container__quote-item');
+    currentQuoteDiv.appendChild(quote, currentQuoteDiv.firstChild);
+    
+    var author = document.createElement('p');
+    author.classList.add('container__quote-author')
+    var newAuthor = document.createTextNode(quotes[0].a)
+
+    author.appendChild(newAuthor);
+
+    const currentAuthorDiv = document.getElementById('container__quote-item');
+    currentAuthorDiv.appendChild(author, currentAuthorDiv.firstChild);
+    console.log(quotes[0])
+    quotes; // fetched quotes
+})};
+
+populateQuotes();
+
+document.getElementsByTagName('img')[0].addEventListener('click', populateQuotes)
