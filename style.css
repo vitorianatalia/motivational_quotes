@@ -123,6 +123,7 @@ img:hover {
     font-size: 42px;
   }
   #container__quote {
+    padding: 40px 66px 42px 66px;
     max-width: 744px;
     border-radius: 7.69987px;
     box-shadow: 3.84994px 3.84994px 7.69987px rgba(14, 14, 14, 0.25);
@@ -158,6 +159,7 @@ img:hover {
 
 @media (min-width: 1024px) {
   #container__quote {
+    padding: 63px 69px 43px 70px;
     width: 744px;
   }
 
