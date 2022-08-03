@@ -7,6 +7,9 @@
 #container {
   min-height: 100vh;
   background: linear-gradient(180deg, #0B2026 0%, #041536 100%);
+
+  display: flex;
+  justify-content: center;
 }
 
 h1 {
@@ -37,15 +40,11 @@ h1 {
   position: relative;
 }
 
-#container__quote-item {
-  border-bottom: 1px solid #F2F2F2;
-  padding-bottom: 28px;
-
-}
 
 .container__quote-quote {
   color: #FFFFFF;
   font-weight: 700;
+  font-size: 16px;
 }
 
 .container__quote-quote::before {
@@ -60,10 +59,43 @@ h1 {
   color: #FFFFFF;
   text-align: end;
   padding-top: 5px;
+  font-size: 12px;
 }
 
 .container__quote-author::before {
   content: "—";
+}
+
+.divider-line {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  height: 24px;
+  margin: 8px 0 30px;
+}
+
+.divider-line p:first-child {
+  border-bottom: 1px solid #F2F2F2;
+  width: 100%;
+  margin-right: 20px;  
+  opacity: 0.5;
+}
+
+.divider-line-equals {
+  display: block;
+  margin: 0 -1px 0 5px;
+  color: #f2f2f2;
+  letter-spacing: 5px;
+  position: absolute;
+  top: 50%;
+  opacity: 0.95;
+}
+
+.divider-line p:last-child {
+  border-bottom: 1px solid #F2F2F2;
+  width: 100%;
+  margin-left: 20px;  
+  opacity: 0.5;
 }
 
 
@@ -71,8 +103,66 @@ img {
   width: 29px;
   position: absolute;
   top: 85%;
-  left: 42%;
+  left: 43%;
   background-color: #16F57D;
   border: 14px solid #16F57D;
-  border-radius: 24px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+img:hover {
+  
+  background-color: #1adb74;
+  border: 14px solid #1adb74;
+
+}
+
+
+@media (min-width: 768px) {
+  h1 {
+    font-size: 42px;
+  }
+  #container__quote {
+    max-width: 744px;
+    border-radius: 7.69987px;
+    box-shadow: 3.84994px 3.84994px 7.69987px rgba(14, 14, 14, 0.25);
+  }
+
+
+  .container__quote-quote {
+   font-size: 32px;
+  }
+
+  .container__quote-author {
+    font-size: 24px;
+  }
+
+  .divider-line {
+    margin: 22px 0 64px;
+  }
+
+  img {
+    width: 62px;
+    border: 26px solid #16F57D;
+    border-radius: 40px;
+    left: 42%;
+  }
+
+  img:hover {
+  
+    background-color: #1adb74;
+    border: 26px solid #1adb74;
+  
+  }
+}
+
+@media (min-width: 1024px) {
+  #container__quote {
+    width: 744px;
+  }
+
+  .divider-line {
+    margin: 23px 0 60px;
+  }
+ 
 }

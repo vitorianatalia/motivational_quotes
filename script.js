@@ -31,4 +31,12 @@ function populateQuotes() {
 
 populateQuotes();
 
-document.getElementsByTagName('img')[0].addEventListener('click', populateQuotes)
+document.getElementsByTagName('img')[0].addEventListener('click', handleRefreshClick)
+
+function handleRefreshClick() {
+    if (document.querySelector('.container__quote-quote').innerHTML && document.querySelector('.container__quote-author').innerHTML) {
+        document.querySelector('.container__quote-quote').remove() 
+        document.querySelector('.container__quote-author').remove()
+        populateQuotes();
+    }
+}
